@@ -4,7 +4,7 @@ A specialized `TEdit` descendant that allows users to capture and display keyboa
 
 ## 📁 Project Structure
 
-`Package/`: Contains the component package and installation files.
+`/`: Contains the component package and installation files.
 
 `Source/`: Contains the `HotKeyEdit.pas` unit.
 
