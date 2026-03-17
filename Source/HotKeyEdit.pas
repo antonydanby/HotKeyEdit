@@ -90,6 +90,8 @@ begin
   FVirtualKey := Key;
 
   // Use the WinAPI to get the friendly name (e.g., "Page Up", "Num 5")
+  // See: https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getkeynametextw
+  // See also Winapi.Windows Delphi system code
   Text := S + GetKeyName(Key);
 
   Key := 0;
