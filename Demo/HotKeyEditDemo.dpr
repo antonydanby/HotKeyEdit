@@ -1,0 +1,14 @@
+program HotKeyEditDemo;
+
+uses
+  Vcl.Forms,
+  Main in 'Main.pas' {Form9};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormDemo, FormDemo);
+  Application.Run;
+end.

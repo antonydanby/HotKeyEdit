@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{CE02B90D-DCE5-4908-A722-3274C013D88E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Demo\HotKeyEditDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="HotKeyEditPackage.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="HotKeyEditDemo">
+        <MSBuild Projects="Demo\HotKeyEditDemo.dproj"/>
+    </Target>
+    <Target Name="HotKeyEditDemo:Clean">
+        <MSBuild Projects="Demo\HotKeyEditDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HotKeyEditDemo:Make">
+        <MSBuild Projects="Demo\HotKeyEditDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HotKeyEditPackage">
+        <MSBuild Projects="HotKeyEditPackage.dproj"/>
+    </Target>
+    <Target Name="HotKeyEditPackage:Clean">
+        <MSBuild Projects="HotKeyEditPackage.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HotKeyEditPackage:Make">
+        <MSBuild Projects="HotKeyEditPackage.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="HotKeyEditDemo;HotKeyEditPackage"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="HotKeyEditDemo:Clean;HotKeyEditPackage:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="HotKeyEditDemo:Make;HotKeyEditPackage:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
